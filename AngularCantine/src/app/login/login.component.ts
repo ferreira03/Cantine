@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(log.form.value)
       .subscribe(res => {
         console.log("loggin" + res);
+        localStorage.setItem('token', res.token)
         log.form.reset();
       },
         err => { console.log(err) })

@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(form.form.value)
       .subscribe(res => {
         console.log("c est ajouté" + res);
+        localStorage.setItem('token', res.token)
         form.reset();
       },
         err => { console.log(err) })

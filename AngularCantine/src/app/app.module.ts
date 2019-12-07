@@ -15,6 +15,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { UserComponent } from './user/user.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     RegisterComponent,
     UserListComponent,
-    UserComponent
+    UserComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

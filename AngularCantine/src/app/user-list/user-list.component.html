@@ -1,3 +1,23 @@
-<div *ngFor="let user of usersList">
-  {{user?.name}}
-</div>
+<h3 class="text-center mt-5">Users</h3>
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Voir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList, index as i">
+      <td>{{user?.firstname}} {{user?.name}} {{user.id}}</td>
+      <td> {{user?.phone}} </td>
+      <td> {{user?.email}} </td>
+      <td>{{user?.town}}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/user', user.id]"
+          routerLinkActive="router-link-active">Detail</button></td>
+    </tr>
+
+  </tbody>
+</table>

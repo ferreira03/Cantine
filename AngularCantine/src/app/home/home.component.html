@@ -1,1 +1,27 @@
-<p>home works!</p>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-8">
+      <app-menu></app-menu>
+    </div>
+    <div class="col-4">
+      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" [routerLink]="['/meals-today']"
+        routerLinkActive="router-link-active">
+        <div class="card-header">Meals</div>
+        <div class="card-body">
+          <h5 class="card-title">Meals's today</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-success mb-3" style="max-width: 18rem;" [routerLink]="['/menusOfweek']"
+        routerLinkActive="router-link-active">
+        <div class="card-header">Menus</div>
+        <div class="card-body">
+          <h5 class="card-title">Menu's weeks</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

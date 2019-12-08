@@ -16,7 +16,7 @@ export class MenuService {
     return this.http.get(url)
       .pipe(
         tap(data => data),
-        catchError(this.handleError<any>('findAllusers', [])))
+        catchError(this.handleError<any>('menuAllForToday', [])))
   }
 
   /**

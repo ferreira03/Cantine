@@ -1,1 +1,24 @@
-<p>user works!</p>
+<h3 class="text-center mt-5">User</h3>
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{user?.firstname}} {{user?.name}}</td>
+      <td> {{user?.phone}} </td>
+      <td> {{user?.email}} </td>
+      <td>{{user?.town}}</td>
+      <td><button class="btn btn-warning">Update</button></td>
+      <td><button class="btn btn-danger">Delete</button></td>
+    </tr>
+
+  </tbody>
+</table>

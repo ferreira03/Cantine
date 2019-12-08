@@ -16,6 +16,10 @@ import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { UserComponent } from './user/user.component';
 import { MenuComponent } from './menu/menu.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { MealComponent } from './meal/meal.component';
+import { NavComponent } from './nav/nav.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -25,16 +29,27 @@ import { MenuComponent } from './menu/menu.component';
     RegisterComponent,
     UserListComponent,
     UserComponent,
-    MenuComponent
+    MenuComponent,
+    MealComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          return localStorage.getItem('access_token');
+        },
+        whitelistedDomains: ['localhost:4200'],
+      }
+    })
+
   ],
-  providers: [AuthService, UserService],
+  providers: [AuthService, UserService, JwtModule, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,22 @@
+<h3 class="text-center mt-5">Today's meal</h3>
+<table class="table">
+  <thead class="">
+    <tr>
+      <th scope="col">Meal</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Voir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meal of mealList, index as i">
+      <td>{{meal?.label}}</td>
+      <td>
+
+      </td>
+      <td>{{meal?.priceDF}}</td>
+      <td></td>
+    </tr>
+
+  </tbody>
+</table>

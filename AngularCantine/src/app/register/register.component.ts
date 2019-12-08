@@ -23,8 +23,9 @@ export class RegisterComponent implements OnInit {
       },
         err => { console.log(err) })
   }
-  addUser(user) {
-    console.log(user.form.value);
-  }
+  /*   addUser(user) {
+      this.authService.addUser(user.form.value)
+  
+    } */
 }
 

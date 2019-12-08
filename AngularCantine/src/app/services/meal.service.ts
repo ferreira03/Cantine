@@ -1,36 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, tap, catchError } from 'rxjs/operators'
-import { AuthService } from './auth.service';
-
+import { map, tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class MealService {
 
-  constructor(private http: HttpClient, private jwtService: AuthService) { }
-  getAllUsers() {
-    const url = 'http://localhost:8080/lunchtime/user/findall';
-    const headers = this.jwtService.getHeaderWithToken();
-    return this.http.get(url, { headers })
+  constructor(private http: HttpClient) { }
+  mealAllforToday(): Observable<any> {
+    const url = "http://localhost:8080/lunchtime/meal/findallavailablefortoday";
+    return this.http.get(url)
       .pipe(
         tap(data => data),
-        catchError(this.handleError<any>('getAllUsers', []))
-      );
+        catchError(this.handleError<any>('mealAllForToday', [])))
   }
-  getOneUser(id) {
-    const url = `http://localhost:8080/lunchtime/user/find/${id}`;
-    const headers = this.jwtService.getHeaderWithToken();
-    return this.http.get(url, { headers })
-      .pipe(
-        tap(data => data),
-        catchError(this.handleError<any>('getOneUser', []))
-      );
-  }
-
-
 
   /**
 * Handle Http operation that failed.
